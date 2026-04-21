@@ -1,0 +1,39 @@
+/* Tablet & Mobile */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  .section-padding {
+    padding: 60px 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  .section-padding {
+    padding: 50px 4%;
+  }
+  .btn-primary, .btn-outline {
+    width: 100%;
+    padding: 14px 20px;
+  }
+  
+  /* Inputs full width overrides */
+  input, select, textarea {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 40px 4%;
+  }
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
