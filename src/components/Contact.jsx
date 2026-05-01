@@ -23,8 +23,8 @@ export default function Contact() {
             <div style={{ marginBottom: '2rem' }}>
               <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', color: 'var(--text)' }}>📞 Contact Numbers</h3>
               <p style={{ color: '#555', fontSize: '1.05rem', lineHeight: '1.8' }}>
-                WhatsApp: <a href="https://wa.me/919868444149" style={{ color: 'var(--highlight)' }}>+91 9868444149</a><br/>
-                Call: <a href="tel:+919873603257" style={{ color: 'var(--highlight)' }}>+91 9873603257</a>
+                WhatsApp: <a href="https://wa.me/919873603257" style={{ color: 'var(--highlight)' }}>+91 98736 03257</a><br/>
+                Call: <a href="tel:+919873603257" style={{ color: 'var(--highlight)' }}>+91 98736 03257</a>
               </p>
             </div>
             <div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import logo from '../assets/logo/Logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,48 +20,56 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Courses', path: '/courses' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   const activeStyle = {
-    color: 'var(--highlight)',
+    color: 'var(--highlight, #D4AF37)',
     fontWeight: '600',
-    borderBottom: '2px solid var(--highlight)' // Added premium gold underline
+    borderBottom: '2px solid var(--highlight, #D4AF37)'
   };
 
   const linkStyle = {
     fontWeight: 500, 
     fontSize: '0.95rem',
-    color: 'var(--text)',
+    color: 'var(--text, #333)',
     textDecoration: 'none',
     paddingBottom: '4px',
     transition: 'color 0.3s ease'
   };
+
+  const whatsappMessage = "Hello, I want to book a makeup appointment.";
+  const whatsappUrl = `https://wa.me/919873603257?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <nav style={{
       position: 'sticky',
       top: 0,
       width: '100%',
-      backgroundColor: 'rgba(255, 255, 255, 0.98)',
-      backdropFilter: 'blur(10px)',
-      boxShadow: isScrolled ? '0 4px 20px rgba(0, 0, 0, 0.04)' : 'none',
-      transition: 'box-shadow 0.3s ease',
+      backgroundColor: 'rgba(255, 255, 255, 0.75)', /* Increased transparency for blur effect */
+      backdropFilter: 'blur(16px)',
+      WebkitBackdropFilter: 'blur(16px)', /* Safari support */
+      borderBottom: '1px solid rgba(255, 255, 255, 0.4)',
+      boxShadow: isScrolled ? '0 4px 30px rgba(0, 0, 0, 0.1)' : '0 2px 10px rgba(0, 0, 0, 0.05)',
+      transition: 'all 0.3s ease',
       zIndex: 1000,
     }}>
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '18px 5%',
-        margin: '0 auto',
-        maxWidth: '1200px'
+        padding: '15px 4%',
+        width: '100%',
+        margin: '0 auto'
       }}>
-        <NavLink to="/" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.75rem', fontWeight: '700', color: 'var(--text)', textDecoration: 'none', letterSpacing: '-0.5px' }}>
-          Ibrahim <span style={{ color: 'var(--highlight)', fontStyle: 'italic' }}>Studio</span>
-        </NavLink>
+        {/* LEFT: Logo */}
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <img src={logo} alt="Logo" style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+        </Link>
         
-        {/* Desktop Menu */}
-        <ul className="desktop-menu" style={{ display: 'flex', gap: '3rem', alignItems: 'center' }}>
+        {/* CENTER: Desktop Menu */}
+        <ul className="desktop-menu" style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', margin: 0, padding: 0, listStyle: 'none' }}>
           {navItems.map((item) => (
             <li key={item.name}>
               <NavLink 
@@ -72,45 +81,97 @@ export default function Navbar() {
               </NavLink>
             </li>
           ))}
-          <li>
-            <a href="#contact" style={linkStyle} className="nav-link-hover">Contact</a>
-          </li>
         </ul>
+
+        {/* RIGHT: Button */}
+        <div className="desktop-menu">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{
+            backgroundColor: '#D4AF37',
+            color: '#fff',
+            padding: '10px 24px',
+            borderRadius: '30px',
+            textDecoration: 'none',
+            fontWeight: '600',
+            fontSize: '0.95rem',
+            minHeight: '48px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'background-color 0.3s ease, transform 0.2s ease',
+            boxShadow: '0 4px 10px rgba(212, 175, 55, 0.3)'
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = '#b5952f';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = '#D4AF37';
+            e.currentTarget.style.transform = 'translateY(0)';
+          }}
+          >
+            Book Appointment
+          </a>
+        </div>
 
         {/* Mobile Hamburger Icon */}
         <div className="mobile-toggle" onClick={toggleMenu} style={{ cursor: 'pointer', fontSize: '1.8rem', color: 'var(--text)' }}>
-          ☰
+          {isOpen ? '✕' : '☰'}
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul style={{
+        <div style={{
           display: 'flex',
           flexDirection: 'column',
           backgroundColor: '#fff',
           padding: '20px 5%',
           borderTop: '1px solid #eee',
-          boxShadow: '0 10px 20px rgba(0,0,0,0.05)'
+          boxShadow: '0 10px 20px rgba(0,0,0,0.05)',
+          position: 'absolute',
+          width: '100%',
+          left: 0,
+          top: '100%'
         }}>
-          {navItems.map((item) => (
-            <li key={item.name} style={{ padding: '12px 0' }}>
-              <NavLink 
-                to={item.path} 
-                onClick={() => setIsOpen(false)}
-                style={({ isActive }) => isActive ? { ...linkStyle, fontSize: '1.1rem', display: 'block', ...activeStyle, borderBottom: 'none', paddingLeft: '10px', borderLeft: '3px solid var(--highlight)' } : { ...linkStyle, fontSize: '1.1rem', display: 'block', paddingLeft: '10px' }}
-              >
-                {item.name}
-              </NavLink>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <NavLink 
+                  to={item.path} 
+                  onClick={() => setIsOpen(false)}
+                  style={({ isActive }) => isActive ? { ...linkStyle, fontSize: '1.1rem', display: 'block', ...activeStyle, borderBottom: 'none', paddingLeft: '10px', borderLeft: '3px solid #D4AF37' } : { ...linkStyle, fontSize: '1.1rem', display: 'block', paddingLeft: '10px' }}
+                >
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
+            <li style={{ marginTop: '10px' }}>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{
+                backgroundColor: '#D4AF37',
+                color: '#fff',
+                padding: '12px 24px',
+                borderRadius: '30px',
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '1rem',
+                minHeight: '48px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                width: '100%'
+              }} onClick={() => setIsOpen(false)}>
+                Book Appointment
+              </a>
             </li>
-          ))}
-          <li style={{ padding: '12px 0' }}>
-            <a href="#contact" onClick={() => setIsOpen(false)} style={{ ...linkStyle, fontSize: '1.1rem', display: 'block', paddingLeft: '10px' }}>Contact</a>
-          </li>
-        </ul>
+          </ul>
+        </div>
       )}
       
       <style>{`
+        * {
+          box-sizing: border-box;
+        }
         @media (min-width: 769px) {
           .mobile-toggle { display: none !important; }
         }
@@ -118,7 +179,7 @@ export default function Navbar() {
           .desktop-menu { display: none !important; }
         }
         .nav-link-hover:hover {
-          color: var(--highlight) !important;
+          color: var(--highlight, #D4AF37) !important;
         }
       `}</style>
     </nav>

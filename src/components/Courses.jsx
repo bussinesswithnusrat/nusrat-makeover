@@ -22,7 +22,7 @@ export default function Courses() {
     const experience = formData.get('experience');
     
     const message = `Hi Nusrat! 🎓 I am interested in enrolling for a professional makeup course.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Selected Course:* ${selectedCourse.title}\n*Experience Level:* ${experience}\n\nPlease share more details and enrollment process.`;
-    const whatsappUrl = `https://wa.me/919868444149?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919873603257?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     handleCloseModal();
   };

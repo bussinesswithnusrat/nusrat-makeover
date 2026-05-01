@@ -23,6 +23,7 @@ export default function Hero() {
           </p>
           <div className="hero-actions">
             <a href="#bridal" className="btn-primary">Book Bridal Makeup</a>
+            <a href="#gallery" className="btn-outline">View Our Work</a>
           </div>
         </div>
 
