@@ -3,7 +3,7 @@ import { coursesData } from '../utils/coursesData';
 
 export default function Courses() {
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [viewMode, setViewMode] = useState('details'); // 'details' | 'enroll'
+  const [viewMode, setViewMode] = useState('details');
 
   const handleOpenModal = (course) => {
     setSelectedCourse(course);
@@ -27,7 +27,6 @@ export default function Courses() {
     handleCloseModal();
   };
 
-  // Lock body scroll when modal is open
   useEffect(() => {
     if (selectedCourse) {
       document.body.style.overflow = 'hidden';
@@ -45,7 +44,6 @@ export default function Courses() {
         <h2 className="section-title">Our <span>Courses</span></h2>
         <p className="section-subtitle">Master the art of makeup with our completely hands-on professional courses designed for beginners to advanced artists.</p>
         
-        {/* Courses Grid */}
         <div className="courses-grid">
           {coursesData.map((course) => (
             <div key={course.id} className="course-card">
@@ -67,7 +65,6 @@ export default function Courses() {
         </div>
       </div>
 
-      {/* Modal Popup */}
       {selectedCourse && (
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -129,7 +126,6 @@ export default function Courses() {
         </div>
       )}
 
-      {/* Styled JSX for scoped simple CSS overlayed */}
       <style>{`
         .courses-grid {
           display: grid;
@@ -178,7 +174,7 @@ export default function Courses() {
           list-style: none;
           padding: 0;
           margin-bottom: 2.5rem;
-          flex-grow: 1; /* Pushes button down evenly */
+          flex-grow: 1;
         }
         .course-card-benefits li {
           margin-bottom: 0.75rem;
@@ -294,6 +290,37 @@ export default function Courses() {
         @keyframes scale-up {
           from { opacity: 0; transform: scale(0.95); }
           to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 600px) {
+          .modal-overlay {
+            align-items: flex-end !important;
+            padding: 0 !important;
+          }
+          .modal-content {
+            padding: 32px 18px 44px !important;
+            max-height: 92vh;
+            border-radius: 16px 16px 0 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          .modal-title {
+            font-size: 1.6rem !important;
+          }
+          .modal-meta {
+            flex-direction: column;
+            gap: 0.4rem;
+          }
+          .course-card {
+            padding: 28px 20px !important;
+          }
+          .course-card-title {
+            font-size: 1.4rem !important;
+          }
+          .form-control {
+            font-size: 16px !important;
+          }
         }
       `}</style>
     </section>

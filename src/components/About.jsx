@@ -34,6 +34,23 @@ export default function About() {
           <a href="#contact" className="btn-outline">Get in Touch</a>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          #about .section-title {
+            text-align: center !important;
+          }
+          #about > div {
+            gap: 2rem !important;
+          }
+          #about > div > div:last-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+        }
+      `}</style>
     </section>
   );
 }

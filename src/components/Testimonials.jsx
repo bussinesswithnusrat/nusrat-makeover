@@ -60,10 +60,13 @@ export default function Testimonials() {
         .testimonials-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 2rem;
+          gap: 1.25rem;
         }
         @media (min-width: 768px) {
-          .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+          .testimonials-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+          }
         }
 
         /* ── Heading / subtitle reveal ── */
@@ -78,7 +81,7 @@ export default function Testimonials() {
         /* ── Card reveal ── */
         .testimonial-card {
           background-color: var(--background);
-          padding: 2.5rem 2rem;
+          padding: 1.5rem 1.25rem;
           border-radius: 12px;
           box-shadow: var(--shadow);
           position: relative;
@@ -89,6 +92,9 @@ export default function Testimonials() {
           transform: translateY(40px);
           transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
+        @media (min-width: 768px) {
+          .testimonial-card { padding: 2.5rem 2rem; }
+        }
         .testi-card-reveal {
           animation: testiUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -97,23 +103,28 @@ export default function Testimonials() {
           to   { opacity: 1; transform: translateY(0);    }
         }
 
-        .testimonial-card:hover {
-          transform: translateY(-5px) !important;
-          box-shadow: var(--shadow-hover) !important;
+        @media (hover: hover) {
+          .testimonial-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: var(--shadow-hover) !important;
+          }
         }
         .quote-icon {
           position: absolute;
           top: 10px; right: 20px;
           font-family: var(--font-heading);
-          font-size: 5rem;
+          font-size: 4rem;
           color: var(--primary);
           opacity: 0.8;
           line-height: 1;
         }
+        @media (min-width: 768px) {
+          .quote-icon { font-size: 5rem; }
+        }
         .stars {
           color: var(--highlight);
-          font-size: 1.2rem;
-          margin-bottom: 1rem;
+          font-size: 1.1rem;
+          margin-bottom: 0.75rem;
           position: relative;
           z-index: 1;
         }
@@ -121,10 +132,14 @@ export default function Testimonials() {
           font-style: italic;
           color: #555;
           line-height: 1.7;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
           flex: 1;
           position: relative;
           z-index: 1;
+          font-size: 0.95rem;
+        }
+        @media (min-width: 768px) {
+          .testimonial-text { font-size: 1rem; margin-bottom: 2rem; }
         }
         .testimonial-author {
           border-top: 1px solid #eee;
@@ -132,7 +147,7 @@ export default function Testimonials() {
         }
         .testimonial-author h4 {
           font-family: var(--font-body);
-          font-size: 1.1rem;
+          font-size: 1rem;
           color: var(--text);
           margin-bottom: 0.2rem;
         }

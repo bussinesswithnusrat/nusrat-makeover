@@ -47,15 +47,15 @@ export default function Navbar() {
       position: 'sticky',
       top: 0,
       width: '100%',
-      backgroundColor: 'rgba(255, 255, 255, 0.75)', /* Increased transparency for blur effect */
+      backgroundColor: 'rgba(255, 255, 255, 0.75)',
       backdropFilter: 'blur(16px)',
-      WebkitBackdropFilter: 'blur(16px)', /* Safari support */
+      WebkitBackdropFilter: 'blur(16px)',
       borderBottom: '1px solid rgba(255, 255, 255, 0.4)',
       boxShadow: isScrolled ? '0 4px 30px rgba(0, 0, 0, 0.1)' : '0 2px 10px rgba(0, 0, 0, 0.05)',
       transition: 'all 0.3s ease',
       zIndex: 1000,
     }}>
-      <div style={{
+      <div className="navbar-inner" style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -177,6 +177,7 @@ export default function Navbar() {
         }
         @media (max-width: 768px) {
           .desktop-menu { display: none !important; }
+          .navbar-inner { justify-content: center !important; }
         }
         .nav-link-hover:hover {
           color: var(--highlight, #D4AF37) !important;

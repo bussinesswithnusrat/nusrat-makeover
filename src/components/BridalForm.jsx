@@ -15,7 +15,7 @@ export default function BridalForm() {
 
   return (
     <section id="bridal" className="section-padding bg-accent-light">
-      <div style={{ maxWidth: '600px', margin: '0 auto', backgroundColor: '#fff', padding: '40px', borderRadius: '8px', boxShadow: 'var(--shadow)' }}>
+      <div className="bridal-form-wrapper">
         <h2 className="section-title">Book <span>Bridal</span> Makeup</h2>
         <p className="section-subtitle">Reserve your date for an unforgettable bridal transformation.</p>
         
@@ -50,6 +50,27 @@ export default function BridalForm() {
           </button>
         </form>
       </div>
+
+      <style>{`
+        .bridal-form-wrapper {
+          max-width: 600px;
+          margin: 0 auto;
+          background-color: #fff;
+          padding: 40px;
+          border-radius: 8px;
+          box-shadow: var(--shadow);
+        }
+        @media (max-width: 600px) {
+          .bridal-form-wrapper {
+            padding: 24px 16px;
+            border-radius: 0;
+            box-shadow: none;
+          }
+          .form-control {
+            font-size: 16px !important; /* Prevents iOS zoom on focus */
+          }
+        }
+      `}</style>
     </section>
   );
 }

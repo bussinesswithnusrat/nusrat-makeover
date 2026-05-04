@@ -36,13 +36,7 @@ export default function Contact() {
             </div>
           </div>
           
-          <div style={{
-            height: '400px',
-            borderRadius: '8px',
-            overflow: 'hidden',
-            boxShadow: 'var(--shadow)',
-            border: '2px solid #eee'
-          }}>
+          <div className="contact-map-wrapper">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14002.508544839818!2d77.2605417!3d28.7188732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfc06bedaa0f9%3A0xea8d4d7328af3dfa!2sOld%20Mustafabad%2C%20Delhi%2C%20110094!5e0!3m2!1sen!2sin!4v1703080000000!5m2!1sen!2sin" 
               width="100%" 
@@ -56,6 +50,21 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        .contact-map-wrapper {
+          height: 400px;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: var(--shadow);
+          border: 2px solid #eee;
+        }
+        @media (max-width: 768px) {
+          .contact-map-wrapper {
+            height: 260px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

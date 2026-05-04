@@ -7,7 +7,7 @@ export default function Gallery() {
     { src: '/assets/images/gallery1.png', tag: 'Bridal' },
     { src: '/assets/images/hero.png', tag: 'Bridal' },
     { src: '/assets/images/about.png', tag: 'Student' },
-    { src: '/assets/images/gallery1.png', tag: 'Bridal' }, // Duplicated for mock 4-column layout
+    { src: '/assets/images/gallery1.png', tag: 'Bridal' },
   ];
 
   return (
@@ -37,7 +37,6 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Fullscreen Preview Modal */}
       {previewImage && (
         <div className="preview-modal" onClick={() => setPreviewImage(null)}>
           <button className="preview-close" onClick={() => setPreviewImage(null)}>&times;</button>
@@ -51,42 +50,36 @@ export default function Gallery() {
           grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem;
         }
-        
         @media(min-width: 768px) {
           .gallery-grid {
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
           }
         }
-        
         @media(min-width: 1024px) {
           .gallery-grid {
             grid-template-columns: repeat(4, 1fr);
             gap: 2.5rem;
           }
         }
-
         .gallery-card {
           position: relative;
           overflow: hidden;
-          border-radius: 12px; /* Smoother curve */
+          border-radius: 12px;
           border: 4px solid #fff;
           box-shadow: var(--shadow);
-          aspect-ratio: 4/5; /* Absolute matching ratio */
+          aspect-ratio: 4/5;
           cursor: pointer;
         }
-
         .gallery-image {
           width: 100%;
           height: 100%;
           object-fit: cover;
           transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
-
         .gallery-card:hover .gallery-image {
           transform: scale(1.08);
         }
-
         .gallery-overlay {
           position: absolute;
           bottom: 0;
@@ -100,11 +93,9 @@ export default function Gallery() {
           opacity: 0;
           transition: opacity 0.4s ease;
         }
-
         .gallery-card:hover .gallery-overlay {
           opacity: 1;
         }
-
         .gallery-tag {
           background-color: var(--background);
           color: var(--text);
@@ -116,8 +107,12 @@ export default function Gallery() {
           letter-spacing: 0.5px;
           box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
-        /* Fullscreen Modal Styles */
+        /* Show overlay always on touch devices */
+        @media (hover: none) {
+          .gallery-overlay {
+            opacity: 1;
+          }
+        }
         .preview-modal {
           position: fixed;
           top: 0; left: 0; right: 0; bottom: 0;
@@ -129,7 +124,6 @@ export default function Gallery() {
           animation: fadein 0.3s forwards;
           backdrop-filter: blur(8px);
         }
-
         .preview-image {
           max-width: 90%;
           max-height: 90vh;
@@ -138,7 +132,6 @@ export default function Gallery() {
           box-shadow: 0 20px 50px rgba(0,0,0,0.5);
           animation: scale-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-
         .preview-close {
           position: absolute;
           top: 25px;
@@ -151,12 +144,14 @@ export default function Gallery() {
           cursor: pointer;
           opacity: 0.6;
           transition: opacity 0.2s;
+          /* Larger tap target on mobile */
+          padding: 10px;
+          min-width: 44px;
+          min-height: 44px;
         }
-
         .preview-close:hover {
           opacity: 1;
         }
-
         @keyframes fadein {
           from { opacity: 0; }
           to { opacity: 1; }
@@ -164,6 +159,11 @@ export default function Gallery() {
         @keyframes scale-up {
           from { opacity: 0; transform: scale(0.95); }
           to { opacity: 1; transform: scale(1); }
+        }
+        @media (max-width: 480px) {
+          .gallery-grid { gap: 0.75rem; }
+          .gallery-card { border-width: 2px; border-radius: 8px; }
+          .preview-close { top: 12px; right: 12px; }
         }
       `}</style>
     </section>
