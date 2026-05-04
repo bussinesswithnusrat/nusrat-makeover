@@ -31,7 +31,7 @@ export default function Navbar() {
   };
 
   const linkStyle = {
-    fontWeight: 500, 
+    fontWeight: 500,
     fontSize: '0.95rem',
     color: 'var(--text, #333)',
     textDecoration: 'none',
@@ -61,19 +61,20 @@ export default function Navbar() {
         alignItems: 'center',
         padding: '15px 4%',
         width: '100%',
-        margin: '0 auto'
+        margin: '0 auto',
+        position: 'relative',
       }}>
-        {/* LEFT: Logo */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+        {/* LEFT: Logo (desktop) / CENTER: Logo (mobile) */}
+        <Link to="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <img src={logo} alt="Logo" style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
         </Link>
-        
+
         {/* CENTER: Desktop Menu */}
         <ul className="desktop-menu" style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', margin: 0, padding: 0, listStyle: 'none' }}>
           {navItems.map((item) => (
             <li key={item.name}>
-              <NavLink 
-                to={item.path} 
+              <NavLink
+                to={item.path}
                 style={({ isActive }) => isActive ? { ...linkStyle, ...activeStyle } : linkStyle}
                 className="nav-link-hover"
               >
@@ -83,7 +84,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* RIGHT: Button */}
+        {/* RIGHT: Book Button (desktop) */}
         <div className="desktop-menu">
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{
             backgroundColor: '#D4AF37',
@@ -100,21 +101,31 @@ export default function Navbar() {
             transition: 'background-color 0.3s ease, transform 0.2s ease',
             boxShadow: '0 4px 10px rgba(212, 175, 55, 0.3)'
           }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = '#b5952f';
-            e.currentTarget.style.transform = 'translateY(-2px)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = '#D4AF37';
-            e.currentTarget.style.transform = 'translateY(0)';
-          }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = '#b5952f';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = '#D4AF37';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
             Book Appointment
           </a>
         </div>
 
-        {/* Mobile Hamburger Icon */}
-        <div className="mobile-toggle" onClick={toggleMenu} style={{ cursor: 'pointer', fontSize: '1.8rem', color: 'var(--text)' }}>
+        {/* Mobile Hamburger Icon — absolutely positioned to the right */}
+        <div
+          className="mobile-toggle"
+          onClick={toggleMenu}
+          style={{
+            cursor: 'pointer',
+            fontSize: '1.8rem',
+            color: 'var(--text, #333)',
+            position: 'absolute',
+            right: '4%',
+          }}
+        >
           {isOpen ? '✕' : '☰'}
         </div>
       </div>
@@ -136,10 +147,12 @@ export default function Navbar() {
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '15px' }}>
             {navItems.map((item) => (
               <li key={item.name}>
-                <NavLink 
-                  to={item.path} 
+                <NavLink
+                  to={item.path}
                   onClick={() => setIsOpen(false)}
-                  style={({ isActive }) => isActive ? { ...linkStyle, fontSize: '1.1rem', display: 'block', ...activeStyle, borderBottom: 'none', paddingLeft: '10px', borderLeft: '3px solid #D4AF37' } : { ...linkStyle, fontSize: '1.1rem', display: 'block', paddingLeft: '10px' }}
+                  style={({ isActive }) => isActive
+                    ? { ...linkStyle, fontSize: '1.1rem', display: 'block', ...activeStyle, borderBottom: 'none', paddingLeft: '10px', borderLeft: '3px solid #D4AF37' }
+                    : { ...linkStyle, fontSize: '1.1rem', display: 'block', paddingLeft: '10px' }}
                 >
                   {item.name}
                 </NavLink>
@@ -167,7 +180,7 @@ export default function Navbar() {
           </ul>
         </div>
       )}
-      
+
       <style>{`
         * {
           box-sizing: border-box;
@@ -177,7 +190,11 @@ export default function Navbar() {
         }
         @media (max-width: 768px) {
           .desktop-menu { display: none !important; }
-          .navbar-inner { justify-content: center !important; }
+          .navbar-logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
         .nav-link-hover:hover {
           color: var(--highlight, #D4AF37) !important;
