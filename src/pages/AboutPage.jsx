@@ -94,7 +94,7 @@ export default function AboutPage() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', textAlign: 'center' }}>
           <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
-            <div style={{ fontSize: '3.5rem', color: '#D4AF37', fontWeight: 'bold', marginBottom: '1rem', fontFamily: 'var(--font-heading, "Playfair Display", serif)' }}>5+</div>
+            <div style={{ fontSize: '3.5rem', color: '#D4AF37', fontWeight: 'bold', marginBottom: '1rem', fontFamily: 'var(--font-heading, "Playfair Display", serif)' }}>7+</div>
             <h4 style={{ fontSize: '1.2rem', color: '#333', fontWeight: '600' }}>Years Experience</h4>
             <p style={{ color: '#777', marginTop: '0.5rem' }}>Perfecting the art of makeup.</p>
           </div>

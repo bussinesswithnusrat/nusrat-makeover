@@ -6,7 +6,7 @@ export default function TrustSection() {
   const stats = [
     { value: '300+', label: 'Brides Served',     icon: '👑' },
     { value: '100+', label: 'Students Trained',  icon: '🎓' },
-    { value: '5+',   label: 'Years Experience',  icon: '✨' },
+    { value: '7+',   label: 'Years Experience',  icon: '✨' },
   ];
 
   return (
