@@ -1,5 +1,15 @@
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "ibrahimmakeupstudio.com" }
+      ],
+      "destination": "https://www.ibrahimmakeupstudio.com/$1",
+      "permanent": true
+    }
   ]
 }
