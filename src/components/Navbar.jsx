@@ -65,9 +65,20 @@ export default function Navbar() {
         margin: '0 auto',
         position: 'relative',
       }}>
-        {/* LEFT: Logo (desktop) / CENTER: Logo (mobile) */}
-        <Link to="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+        {/* LEFT: Logo + Brand Name (desktop & mobile) */}
+        <Link to="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: '10px' }}>
           <img src={logo} alt="Logo" style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+          <span className="brand-name" style={{
+            fontFamily: "'Playfair Display', 'Georgia', serif",
+            fontSize: '1.15rem',
+            fontWeight: '600',
+            lineHeight: '1.25',
+            color: '#2a2a2a',
+            letterSpacing: '0.02em',
+          }}>
+            Ibrahim<br />
+            <span style={{ color: '#D4AF37', fontWeight: '400', fontSize: '0.8rem', letterSpacing: '0.14em', textTransform: 'uppercase' }}>Makeup Studio</span>
+          </span>
         </Link>
 
         {/* CENTER: Desktop Menu */}
@@ -115,7 +126,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Hamburger Icon — absolutely positioned to the right */}
+        {/* Mobile Hamburger Icon */}
         <div
           className="mobile-toggle"
           onClick={toggleMenu}
@@ -183,18 +194,20 @@ export default function Navbar() {
       )}
 
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
         * {
           box-sizing: border-box;
         }
         @media (min-width: 769px) {
           .mobile-toggle { display: none !important; }
+          .brand-name { display: none !important; }
         }
         @media (max-width: 768px) {
           .desktop-menu { display: none !important; }
           .navbar-logo {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            position: static !important;
+            left: unset !important;
+            transform: none !important;
           }
         }
         .nav-link-hover:hover {

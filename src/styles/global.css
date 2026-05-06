@@ -16,7 +16,7 @@
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Poppins', sans-serif;
   --transition: all 0.3s ease-in-out;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Softer premium shadow */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -24,6 +24,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* REMOVED: transition: all 0.3s ease-in-out — was blocking framer-motion */
 }
 
 html {
@@ -36,7 +37,7 @@ body {
   background-color: var(--background);
   line-height: 1.6;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased; /* Crisp fonts */
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,12 +59,12 @@ ul {
 
 /* Base Utility Classes */
 .section-padding {
-  padding: 100px 5%; /* Desktop breathable spacing */
+  padding: 100px 5%;
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 60px 5%; /* Mobile breathable spacing */
+    padding: 60px 5%;
   }
 }
 
@@ -101,7 +102,7 @@ ul {
   font-size: 1rem;
   font-weight: 600;
   border: none;
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
   cursor: pointer;
   transition: var(--transition);
   min-height: 52px;
@@ -110,7 +111,7 @@ ul {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px) scale(1.03); /* Slight scale animation */
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
 }
 
@@ -124,7 +125,7 @@ ul {
   font-size: 1rem;
   font-weight: 600;
   border: 1px solid var(--text);
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
   cursor: pointer;
   transition: var(--transition);
   min-height: 52px;
@@ -134,7 +135,7 @@ ul {
 .btn-outline:hover {
   background-color: var(--text);
   color: #fff;
-  transform: translateY(-2px) scale(1.03); /* Slight scale animation */
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -180,5 +181,5 @@ textarea.form-control {
 }
 
 .bg-accent-light {
-  background-color: #fffaf9; /* Extremely subtle warm tint */
+  background-color: #fffaf9;
 }
