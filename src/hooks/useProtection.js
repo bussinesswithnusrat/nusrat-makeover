@@ -75,14 +75,12 @@ export default function useProtection() {
     checkDevTools();
 
     // Devtools Debugger timing trick
-    let devtoolsOpen = false;
     const devtoolsDetector = setInterval(() => {
       const start = performance.now();
       // Only execute debugger if user opens console, this is the trick
       const check = new Function("debugger");
       check();
       if (performance.now() - start > 100) {
-        devtoolsOpen = true;
         setIsProtected(true);
       }
     }, 2000);
