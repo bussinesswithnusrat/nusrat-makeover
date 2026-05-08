@@ -4,7 +4,7 @@ import makeup1 from '../assets/images/makeup1.webp';
 import makeup2 from '../assets/images/makeup2.webp';
 import makeup3 from '../assets/images/makeup3.webp';
 import makeup4 from '../assets/images/makeup4.webp';
-import makeup5 from '../assets/images/makeup5.png';
+import makeup5 from '../assets/images/makeup5.webp';
 
 export default function GallerySlider() {
   const [activeIndex, setActiveIndex] = useState(0);
