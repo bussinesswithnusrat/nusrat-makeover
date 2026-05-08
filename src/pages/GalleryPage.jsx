@@ -10,8 +10,8 @@ import makeup6 from '../assets/images/makeup6.webp';
 import makeup7 from '../assets/images/makeup7.webp';
 import makeup8 from '../assets/images/makeup8.webp';
 
-import video1 from '../assets/video/16V.MOV';
-import video2 from '../assets/video/2V.MOV';
+const video = "https://res.cloudinary.com/dpeq00iqq/video/upload/f_auto,q_auto:eco/16V_yxgjsp.mov";
+const video2 = "https://res.cloudinary.com/dpeq00iqq/video/upload/f_auto,q_auto:eco/2V_e4vnkc.mov";
 
 // ─── Animation Variants ──────────────────────────────────────────────────────
 const fadeUp = {
@@ -78,7 +78,7 @@ export default function GalleryPage() {
   ];
 
   const videos = [
-    { src: video1, label: 'Bridal BTS' },
+    { src: video, label: 'Bridal BTS' },
     { src: video2, label: 'Studio Session' },
   ];
 
