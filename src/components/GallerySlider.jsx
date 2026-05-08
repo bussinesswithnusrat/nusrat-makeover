@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
-import makeup1 from '../assets/images/makeup1.png';
-import makeup2 from '../assets/images/makeup2.png';
-import makeup3 from '../assets/images/makeup3.png';
-import makeup4 from '../assets/images/makeup4.png';
+import makeup1 from '../assets/images/makeup1.webp';
+import makeup2 from '../assets/images/makeup2.webp';
+import makeup3 from '../assets/images/makeup3.webp';
+import makeup4 from '../assets/images/makeup4.webp';
 import makeup5 from '../assets/images/makeup5.png';
 
 export default function GallerySlider() {

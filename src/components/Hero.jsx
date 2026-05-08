@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import makeup3 from '../assets/images/makeup3.png';
+import makeup3 from '../assets/images/makeup3.webp';
 import ServiceModal from './ServiceModal';
 
 export default function Hero() {

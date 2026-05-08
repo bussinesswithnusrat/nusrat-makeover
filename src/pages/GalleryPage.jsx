@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-import makeup1 from '../assets/images/makeup1.png';
-import makeup2 from '../assets/images/makeup2.png';
-import makeup3 from '../assets/images/makeup3.png';
-import makeup4 from '../assets/images/makeup4.png';
-import makeup5 from '../assets/images/makeup5.png';
-import makeup6 from '../assets/images/makeup6.png';
-import makeup7 from '../assets/images/makeup7.png';
-import makeup8 from '../assets/images/makeup8.png';
+import makeup1 from '../assets/images/makeup1.webp';
+import makeup2 from '../assets/images/makeup2.webp';
+import makeup3 from '../assets/images/makeup3.webp';
+import makeup4 from '../assets/images/makeup4.webp';
+import makeup5 from '../assets/images/makeup5.webp';
+import makeup6 from '../assets/images/makeup6.webp';
+import makeup7 from '../assets/images/makeup7.webp';
+import makeup8 from '../assets/images/makeup8.webp';
 
 import video1 from '../assets/video/16V.MOV';
 import video2 from '../assets/video/2V.MOV';
