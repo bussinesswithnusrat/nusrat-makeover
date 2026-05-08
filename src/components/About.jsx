@@ -13,8 +13,11 @@ export default function About() {
           <img 
             src="/assets/images/about.png" 
             alt="Nusrat Makeup Artist Setup" 
+            width="800"
+            height="800"
             style={{
               width: '100%',
+              height: 'auto',
               borderRadius: '8px',
               boxShadow: 'var(--shadow)'
             }}
@@ -25,10 +28,10 @@ export default function About() {
           <h2 className="section-title" style={{ textAlign: 'left' }}>
             Meet <span>Nusrat</span>
           </h2>
-          <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#555' }}>
+          <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#333' }}>
             Welcome to Ibrahim Makeup Studio. Led by Nusrat, a passionate and experienced makeup artist specializing in high-end bridal transformations and professional makeup education.
           </p>
-          <p style={{ marginBottom: '2rem', color: '#666' }}>
+          <p style={{ marginBottom: '2rem', color: '#444' }}>
             We believe that makeup should enhance, not mask. Our signature style revolves around soft, luminous, and elegant aesthetics that bring out your natural beauty and radiance on your most important day.
           </p>
           <a href="#contact" className="btn-outline">Get in Touch</a>

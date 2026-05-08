@@ -27,6 +27,8 @@ export default function Gallery() {
                 src={item.src} 
                 alt={`${item.tag} Portfolio ${idx + 1}`} 
                 className="gallery-image"
+                width="400"
+                height="500"
                 loading="lazy"
               />
               <div className="gallery-overlay">

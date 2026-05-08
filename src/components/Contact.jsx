@@ -14,7 +14,7 @@ export default function Contact() {
           <div>
             <div style={{ marginBottom: '2rem' }}>
               <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', color: 'var(--text)' }}>📍 Studio Address</h3>
-              <p style={{ color: '#555', fontSize: '1.05rem', lineHeight: '1.8' }}>
+              <p style={{ color: '#444', fontSize: '1.05rem', lineHeight: '1.8' }}>
                 Ibrahim Makeup Studio<br/>
                 Old Mustafabad<br/>
                 Delhi - 110094
@@ -22,14 +22,14 @@ export default function Contact() {
             </div>
             <div style={{ marginBottom: '2rem' }}>
               <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', color: 'var(--text)' }}>📞 Contact Numbers</h3>
-              <p style={{ color: '#555', fontSize: '1.05rem', lineHeight: '1.8' }}>
+              <p style={{ color: '#444', fontSize: '1.05rem', lineHeight: '1.8' }}>
                 WhatsApp: <a href="https://wa.me/919873603257" style={{ color: 'var(--highlight)' }}>+91 98736 03257</a><br/>
                 Call: <a href="tel:+919873603257" style={{ color: 'var(--highlight)' }}>+91 98736 03257</a>
               </p>
             </div>
             <div>
               <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', color: 'var(--text)' }}>⏰ Business Hours</h3>
-              <p style={{ color: '#555', fontSize: '1.05rem', lineHeight: '1.8' }}>
+              <p style={{ color: '#444', fontSize: '1.05rem', lineHeight: '1.8' }}>
                 Monday - Sunday: 10:00 AM - 8:00 PM<br/>
                 Prior appointment necessary for Bridal
               </p>

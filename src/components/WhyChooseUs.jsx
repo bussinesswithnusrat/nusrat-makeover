@@ -56,6 +56,8 @@ export default function WhyChooseUs() {
             src={makeup1}
             alt="Nusrat Makeup Artist working on bridal makeover"
             className="wcu-image"
+            width="400"
+            height="500"
             loading="lazy"
           />
         </div>
@@ -65,7 +67,7 @@ export default function WhyChooseUs() {
           <h2 className="section-title" style={{ textAlign: 'left' }}>
             Why Choose <span>Us?</span>
           </h2>
-          <p style={{ color: '#666', marginBottom: '2rem', fontSize: '1rem', lineHeight: '1.8' }}>
+          <p style={{ color: '#444', marginBottom: '2rem', fontSize: '1rem', lineHeight: '1.8' }}>
             Your wedding day is one of the most important days of your life. We ensure you look and feel absolute perfection.
           </p>
 
@@ -75,7 +77,7 @@ export default function WhyChooseUs() {
                 <div className="wcu-icon">{item.icon}</div>
                 <div>
                   <h3 className="wcu-item-title">{item.title}</h3>
-                  <p className="wcu-item-desc">{item.desc}</p>
+                  <p className="wcu-item-desc" style={{ color: '#444' }}>{item.desc}</p>
                 </div>
               </div>
             ))}

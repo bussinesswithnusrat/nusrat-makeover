@@ -101,7 +101,7 @@ export default function GalleryPage() {
         }}>
           Our <span style={{ color: '#D4AF37', fontStyle: 'italic' }}>Gallery</span>
         </h1>
-        <p style={{ fontSize: '1.15rem', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.7' }}>
+        <p style={{ fontSize: '1.15rem', color: '#444', maxWidth: '600px', margin: '0 auto', lineHeight: '1.7' }}>
           A closer look at our premium bridal transformations and student success stories.
         </p>
       </motion.section>
@@ -173,6 +173,8 @@ export default function GalleryPage() {
               <img
                 src={img.src}
                 alt={img.tag}
+                width="400"
+                height="500"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 loading="lazy"
               />

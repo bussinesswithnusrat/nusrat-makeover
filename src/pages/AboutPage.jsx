@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import nusratImg from '../assets/nusrat/nusrat.jpeg';
+import nusratImg from '../assets/nusrat/nusrat.webp';
 
 export default function AboutPage() {
   const [introVisible, setIntroVisible] = useState(false);
@@ -23,7 +23,7 @@ export default function AboutPage() {
   }, []);
   return (
     <div className="about-page" style={{ backgroundColor: '#fffdfd', color: '#333' }}>
-      
+
       {/* 1. HERO / HEADER */}
       <section style={{
         padding: '120px 5% 100px 5%',
@@ -31,8 +31,8 @@ export default function AboutPage() {
         textAlign: 'center',
         borderBottom: '1px solid rgba(0,0,0,0.03)'
       }}>
-        <h1 style={{ 
-          fontFamily: 'var(--font-heading, "Playfair Display", serif)', 
+        <h1 style={{
+          fontFamily: 'var(--font-heading, "Playfair Display", serif)',
           fontSize: 'clamp(2.5rem, 5vw, 4rem)',
           color: '#1a1a1a',
           marginBottom: '1rem',
@@ -40,7 +40,7 @@ export default function AboutPage() {
         }}>
           About <span style={{ color: '#D4AF37', fontStyle: 'italic' }}>Nusrat</span> Makeup Artist
         </h1>
-        <p style={{ fontSize: '1.2rem', color: '#555', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
           Crafting timeless bridal looks and empowering the next generation of makeup artists at Ibrahim Makeup Studio.
         </p>
       </section>
@@ -51,9 +51,9 @@ export default function AboutPage() {
           {/* IMAGE LEFT */}
           <div className={`intro-image-wrapper ${introVisible ? 'animate-slide-right' : ''}`}>
             <div className="intro-image-bg"></div>
-            <img src={nusratImg} alt="Nusrat Makeup Artist" className="intro-image" loading="lazy" />
+            <img src={nusratImg} alt="Nusrat Makeup Artist" className="intro-image" width="400" height="500" loading="lazy" />
           </div>
-          
+
           {/* TEXT RIGHT */}
           <div className="intro-text-wrapper">
             <h2 className={`intro-heading ${introVisible ? 'animate-slide-left stagger-1' : ''}`}>
@@ -62,10 +62,10 @@ export default function AboutPage() {
             <h3 className={`intro-subheading ${introVisible ? 'animate-slide-left stagger-2' : ''}`}>
               Lead Artist & Educator
             </h3>
-            <p className={`intro-p ${introVisible ? 'animate-slide-left stagger-3' : ''}`}>
+            <p className={`intro-p ${introVisible ? 'animate-slide-left stagger-3' : ''}`} style={{ color: '#444' }}>
               I am Nusrat, the creative force behind <strong>Ibrahim Makeup Studio</strong>. With a profound love for artistry and an eye for detail, my mission is to make every client feel like the most beautiful version of themselves.
             </p>
-            <p className={`intro-p ${introVisible ? 'animate-slide-left stagger-4' : ''}`}>
+            <p className={`intro-p ${introVisible ? 'animate-slide-left stagger-4' : ''}`} style={{ color: '#444' }}>
               Specializing in high-definition bridal makeovers and contemporary styling, I bring years of professional experience, a calm presence, and a commitment to perfection to every vanity chair I stand behind.
             </p>
           </div>
@@ -78,10 +78,10 @@ export default function AboutPage() {
           <h2 style={{ fontFamily: 'var(--font-heading, "Playfair Display", serif)', fontSize: '2.5rem', marginBottom: '2rem', color: '#111' }}>
             The Journey & Passion
           </h2>
-          <p style={{ fontSize: '1.1rem', color: '#555', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+          <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: '1.8', marginBottom: '1.5rem' }}>
             My journey into the makeup industry started with a simple fascination for how colors and textures could enhance natural beauty. What began as a passionate hobby quickly evolved into a dedicated career. I spent years honing my craft, learning from industry veterans, and mastering the delicate balance of light, shade, and skin tones.
           </p>
-          <p style={{ fontSize: '1.1rem', color: '#555', lineHeight: '1.8' }}>
+          <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: '1.8' }}>
             Today, Ibrahim Makeup Studio stands as a sanctuary where creativity meets elegance. I specialize in bridal makeup because there is nothing quite like the joy of being part of someone's most cherished day, ensuring they walk down the aisle with absolute confidence.
           </p>
         </div>
@@ -93,22 +93,22 @@ export default function AboutPage() {
           Experience & Achievements
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', textAlign: 'center' }}>
-          <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
+          <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
             <div style={{ fontSize: '3.5rem', color: '#D4AF37', fontWeight: 'bold', marginBottom: '1rem', fontFamily: 'var(--font-heading, "Playfair Display", serif)' }}>7+</div>
             <h4 style={{ fontSize: '1.2rem', color: '#333', fontWeight: '600' }}>Years Experience</h4>
             <p style={{ color: '#777', marginTop: '0.5rem' }}>Perfecting the art of makeup.</p>
           </div>
-          <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
+          <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
             <div style={{ fontSize: '3.5rem', color: '#D4AF37', fontWeight: 'bold', marginBottom: '1rem', fontFamily: 'var(--font-heading, "Playfair Display", serif)' }}>500+</div>
             <h4 style={{ fontSize: '1.2rem', color: '#333', fontWeight: '600' }}>Happy Brides</h4>
             <p style={{ color: '#777', marginTop: '0.5rem' }}>Smiles delivered on big days.</p>
           </div>
-          <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
+          <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
             <div style={{ fontSize: '3.5rem', color: '#D4AF37', fontWeight: 'bold', marginBottom: '1rem', fontFamily: 'var(--font-heading, "Playfair Display", serif)' }}>100+</div>
             <h4 style={{ fontSize: '1.2rem', color: '#333', fontWeight: '600' }}>Students Trained</h4>
             <p style={{ color: '#777', marginTop: '0.5rem' }}>Through professional courses.</p>
           </div>
-          <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
+          <div style={{ padding: '40px 20px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f9f9f9', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
             <div style={{ fontSize: '3.5rem', color: '#D4AF37', fontWeight: 'bold', marginBottom: '1rem', fontFamily: 'var(--font-heading, "Playfair Display", serif)' }}>✓</div>
             <h4 style={{ fontSize: '1.2rem', color: '#333', fontWeight: '600' }}>Certified Pro</h4>
             <p style={{ color: '#777', marginTop: '0.5rem' }}>Internationally recognized training.</p>
@@ -123,7 +123,7 @@ export default function AboutPage() {
             Why Trust <span style={{ color: '#D4AF37', fontStyle: 'italic' }}>Ibrahim Studio</span>
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-            
+
             <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start' }}>
               <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(212, 175, 55, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(212, 175, 55, 0.5)' }}>
                 <span style={{ fontSize: '1.5rem' }}>✨</span>
@@ -163,7 +163,7 @@ export default function AboutPage() {
         <h2 style={{ fontFamily: 'var(--font-heading, "Playfair Display", serif)', fontSize: '2.5rem', marginBottom: '1rem', color: '#111' }}>
           Ready to Look Your Best?
         </h2>
-        <p style={{ fontSize: '1.1rem', color: '#555', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '1.1rem', color: '#444', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto', lineHeight: '1.6' }}>
           Whether you are a bride-to-be or looking to master the art of makeup yourself, we are here for you.
         </p>
         <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -178,8 +178,8 @@ export default function AboutPage() {
             transition: 'all 0.3s ease',
             boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)'
           }}
-          onMouseOver={e => e.currentTarget.style.transform='translateY(-2px)'}
-          onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}
+            onMouseOver={e => e.currentTarget.style.transform = 'translateY(-2px)'}
+            onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}
           >
             Book Bridal Makeup
           </Link>
@@ -194,8 +194,8 @@ export default function AboutPage() {
             border: '2px solid #111',
             transition: 'all 0.3s ease'
           }}
-          onMouseOver={e => { e.currentTarget.style.backgroundColor='#111'; e.currentTarget.style.color='#fff'; e.currentTarget.style.transform='translateY(-2px)' }}
-          onMouseOut={e => { e.currentTarget.style.backgroundColor='transparent'; e.currentTarget.style.color='#111'; e.currentTarget.style.transform='translateY(0)' }}
+            onMouseOver={e => { e.currentTarget.style.backgroundColor = '#111'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+            onMouseOut={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#111'; e.currentTarget.style.transform = 'translateY(0)' }}
           >
             Explore Courses
           </Link>

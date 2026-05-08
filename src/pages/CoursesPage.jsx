@@ -99,7 +99,7 @@ export default function CoursesPage() {
         }}>
           Our Makeup <span style={{ color: '#D4AF37', fontStyle: 'italic' }}>Courses</span>
         </h1>
-        <p style={{ fontSize: '1.2rem', color: '#555', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
           Learn Professional Makeup from Expert Artist
         </p>
       </section>
@@ -254,11 +254,11 @@ export default function CoursesPage() {
                   marginBottom: '2rem',
                   fontSize: '1.1rem'
                 }}>
-                  <div style={{ color: '#555' }}><strong>Duration:</strong> {selectedCourse.duration}</div>
+                  <div style={{ color: '#444' }}><strong>Duration:</strong> {selectedCourse.duration}</div>
                 </div>
                 
                 <h3 style={{ fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#D4AF37', marginBottom: '1rem' }}>This course includes:</h3>
-                <ol style={{ paddingLeft: '1.5rem', margin: '0 0 2rem 0', color: '#555', lineHeight: '1.8' }}>
+                <ol style={{ paddingLeft: '1.5rem', margin: '0 0 2rem 0', color: '#444', lineHeight: '1.8' }}>
                   {selectedCourse.details.includes.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
@@ -267,7 +267,7 @@ export default function CoursesPage() {
                 <h3 style={{ fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#D4AF37', marginBottom: '1rem' }}>Eye Makeup Techniques:</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0' }}>
                   {selectedCourse.details.eyeMakeup.map((item, idx) => (
-                    <li key={idx} style={{ marginBottom: '0.5rem', color: '#555', display: 'flex', gap: '10px', alignItems: 'center' }}>
+                    <li key={idx} style={{ marginBottom: '0.5rem', color: '#444', display: 'flex', gap: '10px', alignItems: 'center' }}>
                       <span style={{ color: '#D4AF37', fontSize: '0.8rem' }}>•</span> {item}
                     </li>
                   ))}
@@ -276,7 +276,7 @@ export default function CoursesPage() {
                 <h3 style={{ fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#D4AF37', marginBottom: '1rem' }}>Additional Skills:</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 3rem 0' }}>
                   {selectedCourse.details.additionalSkills.map((item, idx) => (
-                    <li key={idx} style={{ marginBottom: '0.5rem', color: '#555', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                    <li key={idx} style={{ marginBottom: '0.5rem', color: '#444', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                       <span style={{ color: '#D4AF37', fontSize: '0.8rem', marginTop: '6px' }}>•</span> 
                       <span style={{ marginLeft: item.includes("makeup") && !item.includes("Full makeup looks") ? '15px' : '0' }}>{item}</span>
                     </li>

@@ -51,7 +51,7 @@ export default function GallerySlider() {
         <h2 style={{ fontFamily: 'var(--font-heading, "Playfair Display", serif)', fontSize: '2.8rem', color: '#111', marginBottom: '1rem' }}>
           Our <span style={{ color: '#D4AF37', fontStyle: 'italic' }}>Work</span>
         </h2>
-        <p style={{ color: '#555', fontSize: '1.15rem' }}>
+        <p style={{ color: '#444', fontSize: '1.15rem' }}>
           Bridal &amp; Student Results showcasing our premium techniques.
         </p>
       </div>
@@ -96,6 +96,8 @@ export default function GallerySlider() {
               src={item.src}
               alt={item.tag}
               className="slider-image"
+              width="400"
+              height="500"
               loading="lazy"
             />
             {/* Badge */}

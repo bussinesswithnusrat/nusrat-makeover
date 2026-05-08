@@ -52,7 +52,11 @@ export default function Hero() {
             src={makeup3}
             alt="Bridal Makeup Artistry by Nusrat"
             className="hero-image"
-            loading="lazy"
+            width="900"
+            height="1200"
+            fetchpriority="high"
+            decoding="sync"
+            loading="eager"
           />
         </div>
 
@@ -104,7 +108,7 @@ export default function Hero() {
         .hero-subtitle {
           font-size: clamp(1.2rem, 2.5vw, 1.5rem);
           font-weight: 500;
-          color: #555;
+          color: #333;
           margin-bottom: 1rem;
           font-family: var(--font-body);
           letter-spacing: 1px;
@@ -112,7 +116,7 @@ export default function Hero() {
         }
         .hero-tagline {
           font-size: 1.15rem;
-          color: #666;
+          color: #444;
           line-height: 1.7;
           margin-bottom: 2.5rem;
         }

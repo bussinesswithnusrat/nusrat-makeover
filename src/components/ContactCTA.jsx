@@ -74,7 +74,7 @@ export default function ContactCTA() {
         }
         .cta-subtitle {
           font-size: 1.15rem;
-          color: #555;
+          color: #444;
           margin-bottom: 2.5rem;
           line-height: 1.6;
         }
