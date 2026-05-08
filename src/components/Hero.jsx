@@ -153,6 +153,7 @@ export default function Hero() {
         }
         .hero-image {
           width: 100%;
+          height: auto;
           max-width: 480px;
           border-radius: 20px;
           box-shadow: 0 20px 60px rgba(0, 0, 0, 0.13);
