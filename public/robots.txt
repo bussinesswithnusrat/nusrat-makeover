@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ibrahimmakeupstudio.com/sitemap.xml
+sitemap: https://www.ibrahimmakeupstudio.com/sitemap.xml
