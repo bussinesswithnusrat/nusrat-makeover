@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import makeup1 from '../assets/images/makeup1.webp';
+import makeup1 from "../assets/images/makeup1.webp";
 
 export default function WhyChooseUs() {
   const [isVisible, setIsVisible] = useState(false);
